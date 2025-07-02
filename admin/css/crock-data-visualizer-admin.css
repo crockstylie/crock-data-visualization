@@ -1,0 +1,1477 @@
+/**
+ * Admin styles for Crock Data Visualizer
+ *
+ * @package    Crock_Data_Visualizer
+ * @subpackage Crock_Data_Visualizer/admin/css
+ * @since      1.0.0
+ */
+
+/* ============================================================================
+   ROOT VARIABLES
+   ========================================================================== */
+:root {
+    --cdv-primary: #0073aa;
+    --cdv-primary-hover: #005a87;
+    --cdv-secondary: #646970;
+    --cdv-success: #00a32a;
+    --cdv-warning: #dba617;
+    --cdv-error: #d63638;
+    --cdv-info: #72aee6;
+
+    --cdv-bg-primary: #ffffff;
+    --cdv-bg-secondary: #f6f7f7;
+    --cdv-bg-accent: #f9f9f9;
+    --cdv-border: #c3c4c7;
+    --cdv-border-light: #e0e0e0;
+
+    --cdv-text-primary: #1d2327;
+    --cdv-text-secondary: #646970;
+    --cdv-text-light: #8c8f94;
+
+    --cdv-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --cdv-shadow-hover: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    --cdv-radius: 8px;
+    --cdv-radius-small: 4px;
+
+    --cdv-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ============================================================================
+   GENERAL LAYOUT
+   ========================================================================== */
+.cdv-admin-wrap {
+    margin: 20px 20px 0 2px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.cdv-admin-wrap h1 {
+    color: var(--cdv-text-primary);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* ============================================================================
+   DASHBOARD STYLES
+   ========================================================================== */
+
+/* Welcome Panel */
+.cdv-welcome-panel {
+    background: linear-gradient(135deg, var(--cdv-primary) 0%, var(--cdv-primary-hover) 100%);
+    color: white;
+    border-radius: var(--cdv-radius);
+    margin-bottom: 30px;
+    box-shadow: var(--cdv-shadow);
+    overflow: hidden;
+}
+
+.cdv-welcome-panel-content {
+    padding: 40px;
+}
+
+.cdv-welcome-panel h2 {
+    color: white;
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 12px;
+}
+
+.cdv-welcome-panel .about-description {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.cdv-welcome-panel-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cdv-welcome-panel-actions .button-hero {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    backdrop-filter: blur(10px);
+    transition: var(--cdv-transition);
+}
+
+.cdv-welcome-panel-actions .button-hero:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Statistics Grid */
+.cdv-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.cdv-stat-card {
+    background: var(--cdv-bg-primary);
+    border: 1px solid var(--cdv-border-light);
+    border-radius: var(--cdv-radius);
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: var(--cdv-transition);
+    box-shadow: var(--cdv-shadow);
+}
+
+.cdv-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--cdv-shadow-hover);
+}
+
+.cdv-stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--cdv-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cdv-stat-icon .dashicons {
+    color: white;
+    font-size: 24px;
+}
+
+.cdv-stat-content h3 {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--cdv-text-primary);
+    margin: 0 0 5px 0;
+}
+
+.cdv-stat-content p {
+    color: var(--cdv-text-secondary);
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Dashboard Widgets */
+.cdv-dashboard-widgets {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.cdv-widget {
+    background: var(--cdv-bg-primary);
+    border: 1px solid var(--cdv-border-light);
+    border-radius: var(--cdv-radius);
+    box-shadow: var(--cdv-shadow);
+}
+
+.cdv-widget h3 {
+    padding: 20px 25px;
+    margin: 0;
+    border-bottom: 1px solid var(--cdv-border-light);
+    color: var(--cdv-text-primary);
+    font-weight: 600;
+}
+
+.cdv-widget-content {
+    padding: 25px;
+}
+
+/* Recent Table */
+.cdv-recent-table {
+    width: 100%;
+}
+
+.cdv-recent-table tr {
+    border-bottom: 1px solid var(--cdv-border-light);
+}
+
+.cdv-recent-table tr:last-child {
+    border-bottom: none;
+}
+
+.cdv-recent-table td {
+    padding: 12px 0;
+    vertical-align: middle;
+}
+
+.cdv-recent-table .dashicons {
+    color: var(--cdv-primary);
+    margin-right: 10px;
+}
+
+.cdv-date {
+    text-align: right;
+    color: var(--cdv-text-light);
+    font-size: 13px;
+}
+
+.cdv-no-data {
+    text-align: center;
+    color: var(--cdv-text-secondary);
+    padding: 40px 20px;
+}
+
+.cdv-no-data .dashicons {
+    font-size: 48px;
+    opacity: 0.3;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Quick Actions */
+.cdv-quick-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.cdv-quick-action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: var(--cdv-bg-accent);
+    border: 1px solid var(--cdv-border-light);
+    border-radius: var(--cdv-radius-small);
+    text-decoration: none;
+    color: var(--cdv-text-primary);
+    transition: var(--cdv-transition);
+}
+
+.cdv-quick-action:hover {
+    background: var(--cdv-primary);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.cdv-quick-action .dashicons {
+    font-size: 18px;
+}
+
+/* Help Section */
+.cdv-help-section {
+    background: var(--cdv-bg-primary);
+    border: 1px solid var(--cdv-border-light);
+    border-radius: var(--cdv-radius);
+    padding: 30px;
+    text-align: center;
+}
+
+.cdv-help-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* ============================================================================
+   IMPORT PAGE STYLES
+   ========================================================================== */
+
+/* Import Container */
+.cdv-import-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Steps Indicator */
+.cdv-steps-indicator {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.cdv-steps-indicator::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 25%;
+    right: 25%;
+    height: 2px;
+    background: var(--cdv-border);
+    z-index: 1;
+}
+
+.cdv-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    max-width: 150px;
+}
+
+.cdv-step-number {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--cdv-bg-secondary);
+    border: 2px solid var(--cdv-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--cdv-text-secondary);
+    transition: var(--cdv-transition);
+}
+
+.cdv-step.active .cdv-step-number {
+    background: var(--cdv-primary);
+    border-color: var(--cdv-primary);
+    color: white;
+}
+
+.cdv-step.completed .cdv-step-number {
+    background: var(--cdv-success);
+    border-color: var(--cdv-success);
+    color: white;
+}
+
+.cdv-step-title {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--cdv-text-secondary);
+    text-align: center;
+}
+
+.cdv-step.active .cdv-step-title {
+    color: var(--cdv-primary);
+}
+
+/* Import Cards */
+.cdv-import-card {
+    background: var(--cdv-bg-primary);
+    border: 1px solid var(--cdv-border-light);
+    border-radius: var(--cdv-radius);
+    padding: 40px;
+    box-shadow: var(--cdv-shadow);
+    margin-bottom: 30px;
+}
+
+.cdv-import-card h2 {
+    margin-bottom: 15px;
+    color: var(--cdv-text-primary);
+}
+
+.cdv-description {
+    color: var(--cdv-text-secondary);
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+/* Upload Area */
+.cdv-upload-area {
+    border: 3px dashed var(--cdv-border);
+    border-radius: var(--cdv-radius);
+    padding: 60px 30px;
+    text-align: center;
+    transition: var(--cdv-transition);
+    cursor: pointer;
+}
+
+.cdv-upload-area:hover,
+.cdv-upload-area.dragover {
+    border-color: var(--cdv-primary);
+    background: rgba(0, 115, 170, 0.05);
+}
+
+.cdv-upload-icon {
+    font-size: 48px;
+    color: var(--cdv-text-light);
+    margin-bottom: 20px;
+}
+
+.cdv-upload-area h3 {
+    color: var(--cdv-text-primary);
+    margin-bottom: 10px;
+}
+
+.cdv-upload-area p {
+    color: var(--cdv-text-secondary);
+    margin-bottom: 20px;
+}
+
+/* File Info */
+.cdv-file-info {
+    margin-top: 20px;
+}
+
+.cdv-file-preview {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: var(--cdv-bg-accent);
+    border: 1px solid var(--cdv-border-light);
+    border-radius: var(--cdv-radius-small);
+}
+
+.cdv-file-preview .dashicons {
+    font-size: 32px;
+    color: var(--cdv-primary);
+}
+
+.cdv-file-details {
+    flex: 1;
+}
+
+.cdv-file-details strong {
+    display: block;
+    color: var(--cdv-text-primary);
+    margin-bottom: 5px;
+}
+
+.cdv-file-details span {
+    display: inline-block;
+    margin-right: 15px;
+    color: var(--cdv-text-secondary);
+    font-size: 13px;
+}
+
+.cdv-remove-file {
+    color: var(--cdv-error);
+    padding: 5px;
+}
+
+.cdv-remove-file:hover {
+    color: #a00;
+}
+
+/* Supported Formats */
+.cdv-supported-formats {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.cdv-supported-formats h4 {
+    color: var(--cdv-text-secondary);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.cdv-format-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cdv-format-badge {
+    background: var(--cdv-primary);
+    color: white;
+    padding: 6px 12px;
+    border-radius: var(--cdv-radius-small);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Form Styles */
+.cdv-form {
+    margin-top: 20px;
+}
+
+.cdv-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.cdv-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.cdv-form-group label {
+    font-weight: 600;
+    color: var(--cdv-text-primary);
+    margin-bottom: 8px;
+}
+
+.cdv-input,
+.cdv-textarea,
+.cdv-select {
+    padding: 12px;
+    border: 1px solid var(--cdv-border);
+    border-radius: var(--cdv-radius-small);
+    font-size: 14px;
+    transition: var(--cdv-transition);
+}
+
+.cdv-input:focus,
+.cdv-textarea:focus,
+.cdv-select:focus {
+    outline: none;
+    border-color: var(--cdv-primary);
+    box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.1);
+}
+
+.cdv-textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.cdv-help-text {
+    font-size: 13px;
+    color: var(--cdv-text-light);
+    margin-top: 5px;
+}
+
+.cdv-checkbox-label {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.cdv-checkbox-label input[type="checkbox"] {
+    margin: 0;
+}
+
+/* Preview Styles */
+.cdv-preview-stats {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: var(--cdv-bg-accent);
+    border-radius: var(--cdv-radius-small);
+}
+
+.cdv-stat {
+    font-size: 14px;
+    color: var(--cdv-text-secondary);
+}
+
+.cdv-stat strong {
+    color: var(--cdv-primary);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.cdv-preview-table-container {
+    max-height: 400px;
+    overflow: auto;
+    border: 1px solid var(--cdv-border-light);
+    border-radius: var(--cdv-radius-small);
+}
+
+.cdv-preview-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cdv-preview-table th,
+.cdv-preview-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--cdv-border-light);
+    font-size: 14px;
+}
+
+.cdv-preview-table th {
+    background: var(--cdv-bg-secondary);
+    font-weight: 600;
+    color: var(--cdv-text-primary);
+    position: sticky;
+    top: 0;
+}
+
+.cdv-preview-table td {
+    color: var(--cdv-text-secondary);
+}
+
+/* Progress Styles */
+.cdv-import-progress {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.cdv-progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--cdv-bg-secondary);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.cdv-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--cdv-primary), var(--cdv-info));
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+.cdv-progress-text {
+    color: var(--cdv-text-secondary);
+    font-size: 14px;
+}
+
+/* Success Styles */
+.cdv-import-success {
+    text-align: center;
+    padding: 40px;
+}
+
+.cdv-success-icon {
+    font-size: 64px;
+    color: var(--cdv-success);
+    margin-bottom: 20px;
+}
+
+.cdv-import-success h3 {
+    color: var(--cdv-text-primary);
+    margin-bottom: 15px;
+}
+
+.cdv-success-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Navigation */
+.cdv-import-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* ============================================================================
+   DATASETS PAGE STYLES
+   ========================================================================== */
+
+/* Page Header */
+.cdv-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.cdv-page-header h1 {
+    margin: 0;
+}
+
+/* Empty State */
+.cdv-empty-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.cdv-empty-content {
+    text-align: center;
+    max-width: 400px;
+}
+
+.cdv-empty-icon {
+    font-size: 80px;
+    color: var(--cdv-text-light);
+    opacity: 0.5;
+    margin-bottom: 30px;
+}
+
+.cdv-empty-content h2 {
+    color: var(--cdv-text-primary);
+    margin-bottom: 15px;
+}
+
+.cdv-empty-content p {
+    color: var(--cdv-text-secondary);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Table Actions */
+.cdv-table-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: var(--cdv-bg-primary);
+    border: 1px solid var(--cdv-border-light);
+    border-radius: var(--cdv-radius-small) var(--cdv-radius-small) 0 0;
+}
+
+.cdv-bulk-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.cdv-search-box {
+    display: flex;
+    gap: 5px;
+}
+
+.cdv-search-box input {
+    padding: 8px 12px;
+    border: 1px solid var(--cdv-border);
+    border-radius: var(--cdv-radius-small);
+    width: 250px;
+}
+
+/* Datasets Table */
+.cdv-datasets-table {
+    width: 100%;
+    background: var(--cdv-bg-primary);
+    border: 1px solid var(--cdv-border-light);
+    border-top: none;
+    border-radius: 0 0 var(--cdv-radius-small) var(--cdv-radius-small);
+    border-collapse: collapse;
+    box-shadow: var(--cdv-shadow);
+}
+
+.cdv-datasets-table th,
+.cdv-datasets-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--cdv-border-light);
+}
+
+.cdv-datasets-table th {
+    background: var(--cdv-bg-secondary);
+    font-weight: 600;
+    color: var(--cdv-text-primary);
+    font-size: 14px;
+}
+
+.cdv-datasets-table tbody tr:hover {
+    background: var(--cdv-bg-accent);
+}
+
+.cdv-datasets-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.cdv-dataset-name strong {
+    color: var(--cdv-text-primary);
+    font-weight: 600;
+}
+
+.cdv-dataset-description {
+    color: var(--cdv-text-secondary);
+    font-size: 13px;
+    margin: 5px 0 0 0;
+}
+
+/* File Type Badges */
+.cdv-file-type-badge {
+    padding: 4px 8px;
+    border-radius: var(--cdv-radius-small);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.cdv-type-csv {
+    background: #e8f5e8;
+    color: #2d5a2d;
+}
+
+.cdv-type-json {
+    background: #e8f0ff;
+    color: #1e3d72;
+}
+
+.cdv-type-xml {
+    background: #fff3e8;
+    color: #8b4000;
+}
+
+.cdv-visualizations-count {
+    color: var(--cdv-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.cdv-visualizations-count:hover {
+    text-decoration: underline;
+}
+
+.cdv-no-visualizations {
+    color: var(--cdv-text-light);
+}
+
+/* Action Buttons */
+.cdv-action-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.cdv-action-buttons .button-small {
+    padding: 6px 8px;
+    min-height: auto;
+    border-radius: var(--cdv-radius-small);
+}
+
+.cdv-action-buttons .dashicons {
+    font-size: 16px;
+}
+
+/* Modal Styles */
+.cdv-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cdv-modal-content {
+    background: var(--cdv-bg-primary);
+    border-radius: var(--cdv-radius);
+    max-width: 800px;
+    width: 90%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--cdv-shadow-hover);
+}
+
+.cdv-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--cdv-border-light);
+}
+
+.cdv-modal-header h2 {
+    margin: 0;
+    color: var(--cdv-text-primary);
+}
+
+.cdv-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--cdv-text-secondary);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: var(--cdv-radius-small);
+    transition: var(--cdv-transition);
+}
+
+.cdv-modal-close:hover {
+    background: var(--cdv-bg-secondary);
+    color: var(--cdv-text-primary);
+}
+
+.cdv-modal-body {
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* ============================================================================
+   LOADING STATES
+   ========================================================================== */
+.cdv-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 40px;
+    color: var(--cdv-text-secondary);
+}
+
+.cdv-loading .spinner {
+    float: none;
+    margin: 0;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .cdv-dashboard-widgets {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .cdv-admin-wrap {
+        margin: 10px 10px 0 2px;
+    }
+
+    .cdv-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cdv-welcome-panel-content {
+        padding: 30px 20px;
+    }
+
+    .cdv-welcome-panel-actions {
+        flex-direction: column;
+    }
+
+    .cdv-form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cdv-steps-indicator {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .cdv-table-actions {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .cdv-search-box input {
+        width: 100%;
+    }
+
+    .cdv-datasets-table {
+        font-size: 14px;
+    }
+
+    .cdv-datasets-table th,
+    .cdv-datasets-table td {
+        padding: 10px;
+    }
+
+    .cdv-action-buttons {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .cdv-import-card {
+        padding: 20px;
+    }
+
+    .cdv-upload-area {
+        padding: 40px 20px;
+    }
+
+    .cdv-quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .cdv-success-actions,
+    .cdv-help-links {
+        flex-direction: column;
+    }
+}
+
+/* ============================================================================
+   UTILITIES
+   ========================================================================== */
+.cdv-text-center { text-align: center; }
+.cdv-text-left { text-align: left; }
+.cdv-text-right { text-align: right; }
+
+.cdv-mb-0 { margin-bottom: 0; }
+.cdv-mb-10 { margin-bottom: 10px; }
+.cdv-mb-20 { margin-bottom: 20px; }
+.cdv-mb-30 { margin-bottom: 30px; }
+
+.cdv-mt-0 { margin-top: 0; }
+.cdv-mt-10 { margin-top: 10px; }
+.cdv-mt-20 { margin-top: 20px; }
+.cdv-mt-30 { margin-top: 30px; }
+
+.cdv-hidden { display: none !important; }
+.cdv-visible { display: block !important; }
+
+/* ============================================================================
+   ANIMATIONS
+   ========================================================================== */
+@keyframes cdvFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cdvSlideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+.cdv-fade-in {
+    animation: cdvFadeIn 0.3s ease-out;
+}
+
+.cdv-slide-in {
+    animation: cdvSlideIn 0.3s ease-out;
+}
+
+/* ============================================================================
+   DARK MODE SUPPORT (if needed later)
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+    /* Will be implemented if needed */
+}
+/* ============================================================================
+   NOTIFICATIONS SYSTEM
+   ========================================================================== */
+
+/* Notifications Container */
+.cdv-notifications {
+    position: fixed;
+    top: 32px; /* Below WordPress admin bar */
+    right: 20px;
+    z-index: 999999;
+    max-width: 400px;
+    pointer-events: none; /* Allow clicking through container */
+}
+
+/* Individual Notification */
+.cdv-notification {
+    background: var(--cdv-bg-primary);
+    border-left: 4px solid var(--cdv-primary);
+    border-radius: var(--cdv-radius-small);
+    box-shadow: var(--cdv-shadow-hover);
+    margin-bottom: 15px;
+    padding: 0;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    pointer-events: auto; /* Enable clicking on notifications */
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    max-width: 100%;
+    position: relative;
+}
+
+/* Show animation */
+.cdv-notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Notification types */
+.cdv-notification.cdv-success {
+    border-left-color: var(--cdv-success);
+    background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+}
+
+.cdv-notification.cdv-error {
+    border-left-color: var(--cdv-error);
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+}
+
+.cdv-notification.cdv-warning {
+    border-left-color: var(--cdv-warning);
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+}
+
+.cdv-notification.cdv-info {
+    border-left-color: var(--cdv-info);
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+/* Notification Content */
+.cdv-notification-content {
+    padding: 20px 50px 20px 20px;
+    position: relative;
+}
+
+.cdv-notification-content strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--cdv-text-primary);
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.cdv-notification-content p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--cdv-text-secondary);
+    line-height: 1.5;
+}
+
+/* Close Button */
+.cdv-notification-close {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--cdv-text-light);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--cdv-transition);
+    line-height: 1;
+}
+
+.cdv-notification-close:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--cdv-text-primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.cdv-notification-close:focus {
+    outline: 2px solid var(--cdv-primary);
+    outline-offset: 2px;
+}
+
+/* Progress Bar for Auto-dismiss */
+.cdv-notification::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: currentColor;
+    opacity: 0.3;
+    animation: cdvNotificationProgress 5s linear;
+    transform-origin: left;
+}
+
+.cdv-notification.cdv-success::after {
+    background: var(--cdv-success);
+}
+
+.cdv-notification.cdv-error::after {
+    background: var(--cdv-error);
+}
+
+.cdv-notification.cdv-warning::after {
+    background: var(--cdv-warning);
+}
+
+.cdv-notification.cdv-info::after {
+    background: var(--cdv-info);
+}
+
+/* Progress animation */
+@keyframes cdvNotificationProgress {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+/* Icons for notification types */
+.cdv-notification-content::before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'dashicons';
+    font-size: 16px;
+    color: white;
+    font-weight: normal;
+}
+
+.cdv-notification.cdv-success .cdv-notification-content::before {
+    content: '✓';
+    background: var(--cdv-success);
+}
+
+.cdv-notification.cdv-error .cdv-notification-content::before {
+    content: '✗';
+    background: var(--cdv-error);
+}
+
+.cdv-notification.cdv-warning .cdv-notification-content::before {
+    content: '!';
+    background: var(--cdv-warning);
+}
+
+.cdv-notification.cdv-info .cdv-notification-content::before {
+    content: 'i';
+    background: var(--cdv-info);
+}
+
+/* Stacking multiple notifications */
+.cdv-notifications .cdv-notification:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.cdv-notifications .cdv-notification:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.cdv-notifications .cdv-notification:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.cdv-notifications .cdv-notification:nth-child(n+5) {
+    animation-delay: 0.4s;
+}
+
+/* ============================================================================
+   AUTO-SAVE FEEDBACK
+   ========================================================================== */
+
+/* Auto-save visual feedback */
+.cdv-auto-saved {
+    background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(0, 115, 170, 0.1) 50%,
+    transparent 100%);
+    animation: cdvAutoSaveFlash 1s ease-out;
+}
+
+@keyframes cdvAutoSaveFlash {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+/* Auto-save indicator */
+.cdv-auto-save-indicator {
+    position: relative;
+}
+
+.cdv-auto-save-indicator::after {
+    content: 'Sauvegardé';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--cdv-success);
+    color: white;
+    padding: 2px 8px;
+    border-radius: var(--cdv-radius-small);
+    font-size: 11px;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--cdv-transition);
+}
+
+.cdv-auto-save-indicator.cdv-auto-saved::after {
+    opacity: 1;
+    animation: cdvAutoSaveLabel 2s ease-out;
+}
+
+@keyframes cdvAutoSaveLabel {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%) scale(0.8);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50%) scale(0.8);
+    }
+}
+
+/* ============================================================================
+   RESPONSIVE NOTIFICATIONS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .cdv-notifications {
+        top: 46px; /* Adjust for mobile admin bar */
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+
+    .cdv-notification {
+        margin-bottom: 10px;
+    }
+
+    .cdv-notification-content {
+        padding: 15px 40px 15px 15px;
+    }
+
+    .cdv-notification-content strong {
+        font-size: 14px;
+    }
+
+    .cdv-notification-content p {
+        font-size: 13px;
+    }
+
+    .cdv-notification-close {
+        right: 10px;
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cdv-notifications {
+        top: 46px;
+        right: 5px;
+        left: 5px;
+    }
+
+    .cdv-notification-content {
+        padding: 12px 35px 12px 12px;
+    }
+
+    .cdv-notification-content::before {
+        display: none; /* Hide icons on very small screens */
+    }
+}
+
+/* ============================================================================
+   DARK MODE SUPPORT FOR NOTIFICATIONS
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    .cdv-notification {
+        background: #2c3338;
+        border-left-color: var(--cdv-primary);
+    }
+
+    .cdv-notification.cdv-success {
+        background: linear-gradient(135deg, #1e3a28 0%, #2d5a3d 100%);
+    }
+
+    .cdv-notification.cdv-error {
+        background: linear-gradient(135deg, #3a1e1e 0%, #5a2d2d 100%);
+    }
+
+    .cdv-notification.cdv-warning {
+        background: linear-gradient(135deg, #3a3a1e 0%, #5a5a2d 100%);
+    }
+
+    .cdv-notification.cdv-info {
+        background: linear-gradient(135deg, #1e2e3a 0%, #2d4a5a 100%);
+    }
+
+    .cdv-notification-content strong {
+        color: #f0f0f1;
+    }
+
+    .cdv-notification-content p {
+        color: #c3c4c7;
+    }
+
+    .cdv-notification-close {
+        color: #8c8f94;
+    }
+
+    .cdv-notification-close:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #f0f0f1;
+    }
+}
+
+/* ============================================================================
+   HIGH CONTRAST MODE
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+    .cdv-notification {
+        border-width: 2px;
+        border-style: solid;
+    }
+
+    .cdv-notification.cdv-success {
+        border-color: #008000;
+        background: #f0fff0;
+    }
+
+    .cdv-notification.cdv-error {
+        border-color: #ff0000;
+        background: #fff0f0;
+    }
+
+    .cdv-notification.cdv-warning {
+        border-color: #ff8000;
+        background: #fff8f0;
+    }
+
+    .cdv-notification.cdv-info {
+        border-color: #0080ff;
+        background: #f0f8ff;
+    }
+
+    .cdv-notification-content strong {
+        color: #000000;
+    }
+
+    .cdv-notification-content p {
+        color: #333333;
+    }
+}
+
+/* ============================================================================
+   REDUCED MOTION SUPPORT
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .cdv-notification {
+        transition: opacity 0.2s ease;
+        transform: none;
+    }
+
+    .cdv-notification.show {
+        transform: none;
+    }
+
+    .cdv-notification::after {
+        animation: none;
+        width: 0;
+    }
+
+    .cdv-notification-close:hover {
+        transform: translateY(-50%);
+    }
+
+    .cdv-auto-saved {
+        animation: none;
+        background: rgba(0, 115, 170, 0.1);
+    }
+
+    .cdv-auto-save-indicator.cdv-auto-saved::after {
+        animation: none;
+        opacity: 1;
+    }
+}
